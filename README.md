@@ -1,6 +1,6 @@
 # stcaf
 
-Prototype framework for sea level change modeling.
+Prototype framework for sea-level change modeling.
 
 This is a prototype. It is likely to change in breaking ways. It might delete all your data so don't use it in production.
 

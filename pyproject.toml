@@ -1,8 +1,8 @@
 [project]
 name = "stcaf"
-version = "0.1.0"
-description = "Add your description here"
+description = "Prototype framework for sea-level change modeling"
 readme = "README.md"
+dynamic = ["version"]
 requires-python = ">=3.12"
 dependencies = [
     "xarray>=2025.1.2",
@@ -12,7 +12,7 @@ dependencies = [
 "testing_models.bump" = "stcaf.sealevel_component_models.testing_models:BumpModel"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
@@ -22,3 +22,10 @@ dev = [
     "pytest-cov>=6.0.0",
     "ruff>=0.10.0",
 ]
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "999"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/stcaf/_version.py"

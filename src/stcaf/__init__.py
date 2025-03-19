@@ -1,4 +1,5 @@
 # ruff: noqa: F401
+from stcaf._version import __version__
 from stcaf.core import (
     build_sealevel_component_model_registry,
     SealevelComponentModel,

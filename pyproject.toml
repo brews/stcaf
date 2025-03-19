@@ -4,7 +4,12 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "xarray>=2025.1.2",
+]
+
+[project.entry-points."stcaf.sealevel_component_models"]
+"testing_models.bump" = "stcaf.sealevel_component_models.testing_models:BumpModel"
 
 [build-system]
 requires = ["hatchling"]
@@ -14,5 +19,6 @@ build-backend = "hatchling.build"
 dev = [
     "mypy>=1.15.0",
     "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
     "ruff>=0.10.0",
 ]

@@ -21,10 +21,10 @@ import xarray as xr
 
 climate = Climate(xr.open_dataset("example_climate_file.nc"))
 
-# Collect registered sea level component models registered as plugins.
+# Collect sea level component models registered as plugins.
 registry = build_sealevel_component_model_registry()
 
-# Run registered sea-level change component models.
+# Run registered models.
 components = project_sealevel_components(
     climate,
     [
@@ -35,9 +35,9 @@ components = project_sealevel_components(
 
 integrated_sealevel = integrate_sealevel_components(components)
 ```
-The "bump" model is a toy used for testing. It takes input "temperature" and adds 1 to it for each model step, preprocess, fit, project, postprocess. The output variable is then "sea_level_change". The `bump` parameter changes the size of the bump.
+The "bump" model is a toy used for testing. It takes input "temperature" and adds 1 to it for each model step: preprocess, fit, project, postprocess. The result is output as "sea_level_change". Setting the `bump` parameter when the model is intialized changes the size of each bump.
 
-You could pass in an instance that follows the `stcaf.SealevelComponentModel` protocol, or register the class at the "stcaf.sealevel_component_models" entrypoint of a Python package.
+Component models can be any object following the `stcaf.SealevelComponentModel` protocol. You can pass these instances in directly or use them through the registry by registering the object at the "stcaf.sealevel_component_models" entrypoint of a Python package.
 
 ## Installation
 

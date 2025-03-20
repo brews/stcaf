@@ -1,5 +1,7 @@
 # stcaf
 
+[![codecov](https://codecov.io/gh/brews/stcaf/graph/badge.svg?token=6XFLZLFYDY)](https://codecov.io/gh/brews/stcaf)
+
 Prototype framework for sea-level change modeling.
 
 This is a prototype. It is likely to change in breaking ways. It might delete all your data so don't use it in production.

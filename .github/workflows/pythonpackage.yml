@@ -24,7 +24,7 @@ jobs:
           pip install --upgrade pip
       - name: Install package
         run: |
-          pip install .[dev]
+          pip install . ruff mypy pytest pytest-cov
       - name: Format check with ruff
         run: |
           ruff format . --diff

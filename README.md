@@ -1,5 +1,6 @@
 # stcaf
 
+[![Python package](https://github.com/brews/stcaf/actions/workflows/pythonpackage.yml/badge.svg)](https://github.com/brews/stcaf/actions/workflows/pythonpackage.yml)
 [![codecov](https://codecov.io/gh/brews/stcaf/graph/badge.svg?token=6XFLZLFYDY)](https://codecov.io/gh/brews/stcaf)
 
 Prototype framework for sea-level change modeling.

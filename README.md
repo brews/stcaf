@@ -48,6 +48,6 @@ pip install git+https://github.com/brews/stcaf
 
 ## Support
 
-Source code is available online at https://github.com/brews/stcaf/. This software is open source and available under the Apavhe License, Version 2.0.
+Source code is available online at https://github.com/brews/stcaf/. This software is open source and available under the Apache License, Version 2.0.
 
 Please file issues in the issue tracker at https://github.com/brews/stcaf/issues.

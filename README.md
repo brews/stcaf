@@ -16,7 +16,7 @@ This example reads in a NetCDF file with climate fields and applies models proje
 
 from stcaf import (
     build_sealevel_component_model_registry,
-    Climate
+    Climate,
     project_sealevel_components,
     integrate_sealevel_components,
 )

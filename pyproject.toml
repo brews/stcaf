@@ -24,7 +24,7 @@ Source = "https://github.com/brews/stcaf"
 "Bug Tracker" = "https://github.com/brews/stcaf/issues"
 
 [project.entry-points."stcaf.sealevel_component_models"]
-"testing_models.bump" = "stcaf.sealevel_component_models.testing_models:BumpModel"
+"bump" = "stcaf.sealevel_component_models.testing_models:BumpModel"
 
 [build-system]
 requires = ["hatchling", "hatch-vcs"]

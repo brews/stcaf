@@ -133,8 +133,13 @@ def build_sealevel_component_model_registry() -> dict[str, SealevelComponentMode
     for plugin in discovered_plugins:
         # TODO: Logging debug might be good here.
         # TODO: Emit warning on conflicts or if key overwritten.
-        # TODO: Name prefix based on package of source plugin? Gracefully avoid name conflicts.
         # Some kind of check against the protocol? etc?
-        registry[str(plugin.name)] = plugin.load()
+
+        # Register plugins under their parent package name, if available.
+        entry_key = str(plugin.name)
+        if plugin.dist is not None:
+            entry_key = f"{plugin.dist.name}.{plugin.name}"
+
+        registry[entry_key] = plugin.load()
 
     return registry

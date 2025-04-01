@@ -80,7 +80,7 @@ def test_project_sealevel_components_registry_parameter():
     registry = build_sealevel_component_model_registry()
 
     components = project_sealevel_components(
-        climate, [registry["testing_models.bump"](bump=2.0)]
+        climate, [registry["stcaf.bump"](bump=2.0)]
     )
 
     target_component = components[0]

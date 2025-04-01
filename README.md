@@ -41,7 +41,7 @@ integrated_sealevel = integrate_sealevel_components(components)
 ```
 The "bump" model is a toy used for testing. It takes input "temperature" and adds 1 to it for each model step: preprocess, fit, project, postprocess. The result is output as "sea_level_change". Setting the `bump` parameter when the model is intialized changes the size of each bump.
 
-Component models can be any object following the `stcaf.SealevelComponentModel` protocol. You can pass these instances in directly or use them through the registry by registering the object at the "stcaf.sealevel_component_models" entrypoint of a Python package. Plugin from an installed package are namespaced by the source package name. This avoids naming conflicts, referencing each model from the registry like `registry["<package_name>.<model_name>"]`.
+Component models can be any object following the `stcaf.SealevelComponentModel` protocol. You can pass these instances in directly or use them through the registry by registering the object at the "stcaf.sealevel_component_models" entrypoint of a Python package. Plugins from installed packages are namespaced by the package name; meaning models are referenced from the registry like `registry["<package_name>.<model_name>"]` to avoid naming conflicts.
 
 ## Installation
 

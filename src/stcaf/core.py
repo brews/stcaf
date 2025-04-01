@@ -89,7 +89,7 @@ def project_sealevel_components(
 
 
 def filter_tag(
-    components: Sequence[SealevelComponent], tag=str
+    components: Sequence[SealevelComponent], tag: str
 ) -> Sequence[SealevelComponent]:
     """
     Return only components, c, with "tag" in `c.tags`.

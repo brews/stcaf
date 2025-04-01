@@ -88,6 +88,15 @@ def project_sealevel_components(
     return out
 
 
+def filter_tag(
+    components: Sequence[SealevelComponent], tag=str
+) -> Sequence[SealevelComponent]:
+    """
+    Return only components, c, with "tag" in `c.tags`.
+    """
+    return [c for c in components if tag in getattr(c, "tags", set())]
+
+
 def integrate_sealevel_components(
     components: Sequence[SealevelComponent],
 ) -> IntegratedSealevel:

@@ -16,27 +16,37 @@ jobs:
         shell: bash
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.6.14"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
-      - name: Upgrade pip
-        run: |
-          pip install --upgrade pip
-      - name: Install package
-        run: |
-          pip install . ruff mypy pytest pytest-cov
+          python-version: ".python-version"
+
+      - name: Install the project
+        run: uv sync --all-extras --dev
+
       - name: Format check with ruff
         run: |
-          ruff format . --diff
+          uv run ruff format . --diff
+
       - name: Lint check with ruff
         run: |
-          ruff check . --output-format=github
+          uv run ruff check . --output-format=github
+
       - name: Type check with mypy
         run: |
-          mypy --ignore-missing-imports --install-types --non-interactive --package stcaf
+          uv run mypy --ignore-missing-imports --install-types --non-interactive --package stcaf
+
       - name: Test with pytest
         run: |
-          pytest -vv --cov-report term-missing --cov-report xml --cov stcaf
+          uv run pytest -vv --cov-report term-missing --cov-report xml --cov stcaf
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         env:
